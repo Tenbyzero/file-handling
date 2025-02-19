@@ -18,7 +18,6 @@ int main()
     printf("Enter 1 to write data or 2 to read data: ");
     scanf("%d", &choice);
     getchar(); // Consume the newline character left by scanf
-
     switch (choice)
     {
         case 1:
@@ -31,7 +30,6 @@ int main()
             printf("Invalid choice\n");
             break;
     }
-
     return 0;
 }
 
@@ -51,7 +49,6 @@ void writeData()
         scanf("%d", &n);
         getchar(); // Consume the newline character left by scanf
         printf("\nEnter %d student details : \n", n);
-
         for (int i = 0; i < n; i++)
         {
             printf("\nEnter the name student [%d] : ", i + 1);
@@ -64,7 +61,6 @@ void writeData()
             printf("Enter the date of birth student [%d] : ", i + 1);
             fgets(zzz[i].dob, sizeof(zzz[i].dob), stdin);
         }
-
         for (int i = 0; i < n; i++)
         {
             fprintf(f, "%d. Student details \n", i + 1);
@@ -75,7 +71,6 @@ void writeData()
             fprintf(f, "    Date of birth : %s\n", zzz[i].dob);
             fprintf(f, "---------------------------------------------\n");
         }
-
         fclose(f);
     }
 }
